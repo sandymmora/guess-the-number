@@ -14,11 +14,11 @@ public class GuessTheNumberGame {
         this.random = new Random();
         this.targetNumber = random.nextInt(1, 101);
     }
-    private boolean checkGuess(Player player, ComputerPlayer computerPlayer){
+    private boolean checkGuess(Player player, ComputerPlayer computerPlayer) {
         int guess = player.makeGuess();
-        if(guess < targetNumber){
+        if (guess < targetNumber) {
             System.out.println("Mi numero es mayor");
-            computerPlayer.setStartRange(guess+1);
+            computerPlayer.setStartRange(guess + 1);
             return false;
         } else if (guess > targetNumber) {
             System.out.println("Mi numero es menor");
@@ -28,7 +28,7 @@ public class GuessTheNumberGame {
         return true;
     }
 
-    public static void main(String[] args) {
+    public static void main() {
         //Iniciar el juego
         System.out.println("Inicia el juego");
         System.out.println("¿Cuál es tu nombre?");
@@ -57,7 +57,7 @@ public class GuessTheNumberGame {
             }
         }
         if (playerInTurn.equals("Computer")){
-            System.out.println("\uD83C\uDF1F Felicitaciones " + namePlayer + "\uD83C\uDF1F Adivinaste primero el número!!" );
+            System.out.println("\uD83C\uDF1F Felicitaciones " + humanPlayer.getName() + "\uD83C\uDF1F Adivinaste primero el número!!" );
             System.out.println("Tu historial de suposiciones: " + humanPlayer.getGuesses());
         }else{
             System.out.println("❉ La computadora ganó ❉");
